@@ -54,7 +54,7 @@ request.onload = function() {
   }
   
   const results = request.response.items;
-  results && next.parentNode.replaceChild(nextButton, next )
+  results && next.parentNode.replaceChild(nextButton, next)
   results && index>10 && previous.parentNode.replaceChild(previousButton, previous)
   const oldChild = document.getElementById('search-results')
   const newChild = document.createElement("div")
@@ -63,6 +63,8 @@ request.onload = function() {
   const oldImages = document.getElementById("image-results")
   const newImages = document.createElement("div")
   newImages.id = "image-results"
+  newChild.innerHTML = '<h2>Web results</h2>'
+  newImages.innerHTML = '<h2 id="image-title">Image results</h2>'
   
   results && results.map(result=>{
     newImages.classList.add("image-results")
